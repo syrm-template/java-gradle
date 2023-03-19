@@ -1,0 +1,15 @@
+### 构建工具
+.gradle
+build/
+out/
+target/
+
+## gradle wrapper
+gradle/
+gradlew
+gradlew.bat
+
+### IDE 和 OS
+.idea/
+.vscode/
+.DS_Store
