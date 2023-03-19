@@ -9,6 +9,7 @@ version = "1.0-SNAPSHOT"
 
 java {
     toolchain {
+        // 工具链语言版本必须和 运行 gradle 所用 JDK 版本一致
         languageVersion.set(JavaLanguageVersion.of(17))
     }
 
