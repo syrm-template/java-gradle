@@ -10,6 +10,7 @@ allprojects {
 }
 
 subprojects {
+    plugins.apply("java")
     java {
         toolchain {
             // 工具链语言版本必须和 运行 gradle 所用 JDK 版本一致
@@ -32,21 +33,6 @@ subprojects {
     configurations.all {
         resolutionStrategy.cacheDynamicVersionsFor(1, TimeUnit.DAYS)
         resolutionStrategy.cacheChangingModulesFor(1, TimeUnit.DAYS)
-    }
-
-    dependencies {
-        implementation(libs.slf4j)
-        implementation(libs.slf4jJul)
-        runtimeOnly(libs.logback)
-
-        compileOnly(libs.lombok)
-        annotationProcessor(libs.lombok)
-        testCompileOnly(libs.lombok)
-        testAnnotationProcessor(libs.lombok)
-
-        testImplementation(testLibs.junitApi)
-        testRuntimeOnly(testLibs.junitEngine)
-        testRuntimeOnly(testLibs.junitPlatformLauncher)
     }
 
     tasks.getByName<Test>("test") {
