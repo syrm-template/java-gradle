@@ -12,9 +12,13 @@ allprojects {
 subprojects {
     plugins.apply("java")
     java {
+        // 编译版本和 toolchain 二选一
+        sourceCompatibility = JavaVersion.VERSION_19
+        targetCompatibility = JavaVersion.VERSION_19
+
         toolchain {
             // 工具链语言版本必须和 运行 gradle 所用 JDK 版本一致
-            languageVersion.set(JavaLanguageVersion.of(17))
+            // languageVersion.set(JavaLanguageVersion.of(17))
         }
         sourceSets {
             main {
