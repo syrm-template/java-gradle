@@ -2,6 +2,8 @@
 
 rootProject.name = "java-gradle-template"
 
+rootProject.children.forEach { it.buildFileName = it.name + ".gradle.kts" }
+
 pluginManagement {
     repositories {
         maven("https://maven.aliyun.com/repository/gradle-plugin")
