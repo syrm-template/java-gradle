@@ -41,6 +41,11 @@ subprojects {
 
     tasks.withType<JavaCompile> {
         options.encoding = StandardCharsets.UTF_8.name()
+        options.compilerArgs.add("--enable-preview")
+    }
+
+    tasks.withType<JavaExec> {
+        jvmArgs("--enable-preview")
     }
 
     @Suppress("SpellCheckingInspection")
