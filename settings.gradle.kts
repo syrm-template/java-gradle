@@ -1,7 +1,6 @@
 @file:Suppress("UnstableApiUsage")
 
 rootProject.name = "java-gradle-template"
-
 rootProject.children.forEach { it.buildFileName = it.name + ".gradle.kts" }
 
 pluginManagement {
